@@ -17,6 +17,7 @@ from .config import (DATABASE_URL, EXCEL_PATH, SHEET_MAP, TABLE_NAMES,
                      COLUMN_RENAMES, TYPE_OVERRIDES, BASE_TYPE_OVERRIDES,
                      MOJIBAKE_COLUMNS)
 from .cleaning import clean_dataframe, infer_type
+from .build_semantic import build_semantic_views
 
 PG_TYPES = {"percent": "NUMERIC", "multiple": "NUMERIC", "numeric": "NUMERIC",
             "int": "INTEGER", "bool": "BOOLEAN", "date": "DATE", "text": "TEXT"}
@@ -125,8 +126,11 @@ def main():
               f"parse failures: {sum(st['parse_failures'].values())} | "
               f"mojibake fixes: {sum(st['mojibake_fixes'].values())}")
 
+    print("\n[etl] creating semantic views...")
+    build_semantic_views(DATABASE_URL)
+
     print(f"\n[etl] done in {time.perf_counter() - t0:.1f}s | "
-          f"Tables created in 'cleaned' schema")
+          f"Cleaned tables and semantic views ready in 'cleaned' schema")
 
 
 if __name__ == "__main__":

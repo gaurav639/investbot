@@ -1,0 +1,9 @@
+[
+  {
+    "idx": 0,
+    "name": "0",
+    "path": "",
+    "type": "sentence_transformers_impl.Transformer",
+    "kwargs": ["dataset_embeddings"]
+  }
+]
