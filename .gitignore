@@ -29,8 +29,7 @@ Thumbs.db
 models/cde-small-v2/
 
 # Data
-data/*.xlsx
-!data/source_data.xlsx  # keep the source data
+# (data folder is tracked)
 
 # Logs
 *.log
