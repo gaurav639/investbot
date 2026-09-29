@@ -39,10 +39,7 @@ cp .env.example .env
 # Edit .env with your DATABASE_URL and GROQ_API_KEY
 
 # 5. Setup database (PostgreSQL with pgvector)
-# Option A (Fastest): Run with Docker
-docker run -d --name investbot-db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=investbot -p 5432:5432 pgvector/pgvector:pg15
-
-# Option B: Local PostgreSQL (ensure pgvector extension is installed)
+# Connect to PostgreSQL and enable pgvector:
 # CREATE DATABASE investbot;
 # \c investbot;
 # CREATE EXTENSION IF NOT EXISTS vector;
