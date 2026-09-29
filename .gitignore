@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files (keep .env.example)
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (downloaded at runtime)
+models/cde-small-v2/
+
+# Data
+data/*.xlsx
+!data/source_data.xlsx  # keep the source data
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
